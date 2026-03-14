@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xeno-Crossing: PlutoMars Colony | PICO-16 Runtime</title>
+    <meta name="description" content="Master Runtime for PICO-16 / Xeno-Crossing.">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="runtime-mode">
+    <div id="app">
+        <header id="runtime-header">
+            <div class="logo">🛸 XENO-CROSSING <span>PLUTOMARS</span></div>
+            <div class="vm-status">
+                <div class="status-indicator online"></div>
+                <span>CORE COMPILING... OK</span>
+            </div>
+            <div class="runtime-controls">
+                <button id="reset-btn" class="ctrl-btn">SYSTEM RESET</button>
+            </div>
+        </header>
+
+        <main id="game-viewport">
+            <!-- PICO-16 Canvas -->
+            <div id="monitor-frame">
+                <div class="crt-overlay"></div>
+                <canvas id="pico-canvas" width="320" height="240"></canvas>
+            </div>
+            
+            <!-- Side Log (The 'Backend' feedback) -->
+            <aside id="system-aside">
+                <div class="aside-label">NEURAL BACKEND LOGS</div>
+                <div id="console-output">
+                    <p class="log-info">> PICO-16 V0.9.4 BOOTING...</p>
+                    <p class="log-info">> LOADING MAPPED ASSETS (SPRS 1-64)...</p>
+                    <p class="log-info">> INJECTING MASTER CART... OK</p>
+                </div>
+                <div class="ai-interaction">
+                    <div class="aside-label">ANTIGRAVITY EVOLUTION</div>
+                    <textarea id="ai-request" placeholder="Tell Antigravity how to evolve the world..."></textarea>
+                    <button id="ai-evolve-btn">EXECUTE CHANGE</button>
+                </div>
+            </aside>
+        </main>
+
+        <footer id="runtime-footer">
+            <div class="stat-unit">
+                <span class="label">CPU</span>
+                <span class="val" id="cpu-load">12%</span>
+            </div>
+            <div class="stat-unit">
+                <span class="label">VRAM</span>
+                <span class="val">64KB</span>
+            </div>
+            <div class="stat-unit">
+                <span class="label">ARCH</span>
+                <span class="val">PICO-16</span>
+            </div>
+            <div class="time-unit" id="system-time">2026-03-14 15:34</div>
+        </footer>
+    </div>
+    <script type="module" src="/main.js"></script>
+</body>
+</html>
